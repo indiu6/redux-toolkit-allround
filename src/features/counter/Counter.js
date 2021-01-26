@@ -9,6 +9,8 @@ import {
 } from './counterSlice';
 import styles from './Counter.module.css';
 
+// test branch
+
 export function Counter() {
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
@@ -38,7 +40,7 @@ export function Counter() {
           className={styles.textbox}
           aria-label="Set increment amount"
           value={incrementAmount}
-          onChange={e => setIncrementAmount(e.target.value)}
+          onChange={(e) => setIncrementAmount(e.target.value)}
         />
         <button
           className={styles.button}
