@@ -52,7 +52,9 @@ function App() {
                       <Button
                         appearance="primary"
                         onClick={() => {
-                          dispatch(add(todoText));
+                          dispatch(
+                            add({ txt: todoText, id: Date.now().toString() }),
+                          );
                           setTodoText('');
                         }}
                       >

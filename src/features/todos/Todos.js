@@ -1,17 +1,29 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { List } from 'rsuite';
-import { selectTodos } from './TodosSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { FlexboxGrid, Icon, IconButton, List } from 'rsuite';
+import { selectTodos, del } from './TodosSlice';
 
 function Todos() {
   const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
 
   return (
     <List bordered>
-      {todos.map((todo, i) => (
-        <List.Item bordered key={i}>
-          {todo}
-        </List.Item>
+      {todos.map(({ txt, id }) => (
+        <FlexboxGrid key={id}>
+          <FlexboxGrid.Item colspan={12}>
+            <List.Item bordered>{txt}</List.Item>
+          </FlexboxGrid.Item>
+          <FlexboxGrid.Item colspan={10}></FlexboxGrid.Item>
+          <FlexboxGrid.Item colspan={2}>
+            <IconButton
+              icon={<Icon icon="minus" />}
+              color="red"
+              circle
+              onClick={() => dispatch(del(id))}
+            />
+          </FlexboxGrid.Item>
+        </FlexboxGrid>
       ))}
     </List>
   );
