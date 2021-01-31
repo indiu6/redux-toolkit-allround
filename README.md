@@ -1,4 +1,4 @@
-# redux-toolkit-allround
+# Simple Todo + Counter App
 
 Practice Redux Toolkit (createSlice, createAsyncThunk, configureStore) / React-Redux (useDispatch) / Design by @rsuite
 
