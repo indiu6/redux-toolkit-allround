@@ -20,6 +20,7 @@ import './App.css';
 import { add } from './features/todos/TodosSlice';
 import Todos from './features/todos/Todos';
 import Post from './features/post/Post';
+import Counter from './features/counter/Counter';
 
 function App() {
   const dispatch = useDispatch();
@@ -68,6 +69,7 @@ function App() {
               <Divider />
               <Todos />
               <Post />
+              <Counter />
             </FlexboxGrid.Item>
           </FlexboxGrid>
         </Content>
