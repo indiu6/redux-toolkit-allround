@@ -2,6 +2,7 @@ import {
   combineReducers,
   configureStore,
   getDefaultMiddleware,
+  applyMiddleware,
 } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
 import postsSlice from '../features/post/PostsSlice';

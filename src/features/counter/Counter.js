@@ -6,6 +6,7 @@ import {
   incrementByAmount,
   incrementAsync,
   selectCount,
+  test,
 } from './counterSlice';
 import styles from './Counter.module.css';
 
@@ -55,6 +56,20 @@ const Counter = () => {
           onClick={() => dispatch(incrementAsync(Number(incrementAmount) || 0))}
         >
           Add Async
+        </button>
+        <button
+          className={styles.button}
+          // onClick={() => dispatch(test('this is action.payload'))}
+          onClick={() =>
+            dispatch(
+              test({
+                testValue: 'aaa',
+                b: 'bbbb',
+              }),
+            )
+          }
+        >
+          Test
         </button>
       </div>
     </div>
